@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import React from 'react';
+import React, {useState} from 'react';
 
 
 function App() {
 
   const AnimalsList = [
-    {id : 1, name: 'Laki', type: 'lion', birthday: '2013-12-11'},
+    {id : 1, name: 'Laki', type: 'lion', birthday: ''},
     {id : 2, name: 'Eli', type: 'elephant', birthday: '2010-05-24'},
     {id : 3, name: 'Micko', type: 'parrot', birthday: '2020-07-14'},
     {id : 4, name: 'Kroki', type: 'crocodile', birthday: '2005-04-09'},
@@ -21,8 +21,8 @@ function App() {
         <th>Name</th> 
         <th>Type</th>
         <th>Birthday</th>
-
       </thead>
+
       <tbody>
       <td>{AnimalsList.map((element) => (
    
@@ -35,7 +35,7 @@ function App() {
               ))}
         </td>
         <td>{AnimalsList.map((element) => (
-               <tr key={element.id}>{element.birthday}</tr>
+               <tr key={element.id}>{element.birthday ? (element.birthday) : "Unknown"}</tr>
               ))}
         </td>
       </tbody>
